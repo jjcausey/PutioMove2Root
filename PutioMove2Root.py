@@ -1,10 +1,16 @@
 #   Libraries
 
-import putio 
+import putiopy
 
+############################# User Specific ###########################
 
 # Root Folder
-root = 999999999 # INSERT YOUR ROOT FOLDER ID
+root = 999999999 # INSERT YOUR ROOT FOLDER
+
+# Token
+PutioToken = ' ' # INSERT YOUR TOKEN
+
+############################# User Specific ###########################
 
 # List Files, Move Video files to Root Folder  and Delete Sub-folders
 
@@ -18,14 +24,9 @@ def PutioMove2Root():
                     if file2.file_type == "VIDEO":
                         print file2.id
                         client.File.move(file2,root)
-                        #client.File.MP4(file2)
                         client.File.delete(file1)
 
-
-
-PutioToken = 'XXXXXXXXXXXXXXXXXXXX' # INSERT YOUR TOKEN
-             
-client = putio.Client(PutioToken) # Instanciate Client Object
+client = putiopy.Client(PutioToken) # Instanciate Client Object
 
 PutioMove2Root()
 
